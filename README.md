@@ -12,7 +12,7 @@ The public data for our experiment about user preference and information polariz
    5. Content;
    6. Classified by FastText algorithm;
    7. Verification (0 for rejected; 1 for approved)
-- Exposed weibos (classified by volunteers)
+- Exposed weibos (classified by volunteers and corrected by experimenters)
    1. BotId : weibo id;
    2. id : combined weibo id;
    3. groupName : bot index;
