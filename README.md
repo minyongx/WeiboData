@@ -9,6 +9,8 @@ In order to explore the extent and pathway of preferences affecting news consump
 
 A social bot is a computer algorithm that automatically interacts with humans on social networks, trying to emulate and possibly alter their behavior. The social bot in our experiment is designed to imitate similarity-based relationship formation, which reflects the human behavior of selecting information and relationships depending on one's preferences (i.e., self-selection).
 
+![](https://www.baidu.com/img/bd_logo1.png?qua=high&where=super)
+
 Based on the two hypotheses, the workflow of the bots includes five steps. (1) Initially, each bot is assigned 2 or 3 default followings, who mostly post or repost messages consistent with the preference of the bot. (2) A bot will periodically awaken from idleness at a uniformly random time interval. When the bot awakened, it can view the latest messages posted or reposted by its followings. As well known, not all unreaded information can be exposed to users of social networks. A bot can assess only the latest 50 messages (i.e., the maximum amount in the first page on Weibo) after waking up. Please note that we exclude the influence of algorithmic ranking and recommendation systems (i.e., pre-selection) on the information exposure by re-ranking all possible messages according to the descending order of posting time. (3) After viewing the exposed messages, the bot selects only the messages consistent with its preferences. The step depends on the FastText text classification algorithm, and all classification results from the algorithm are further verified by the experimenters to ensure correctness. (4) If there are reposted messages in selected messages, according to directed triadic closure, the bot randomly selects a reposted message and follows the direct source of the reposted message. Please note that Weibo limits direct access to the information about the followings and followers of a user; thus, bots must find new followings through reposting behavior. (5) If the following number reaches the upper limit, the bot stops running; otherwise, the bot becomes idle and waits to wake up again. To avoid legal and moral hazards, the bots in the experiment do not produce or repost any information.
 
 Technically, the bot is built using the Selenium WebDriver API (http://www.seleniumhq.org/projects/webdriver) to drive Google Chrome Browser as a human to navigate the Weibo website. To train the FastText classifier for identifying preferred contents, we use the THUCNews dataset (http://thuctc.thunlp.org), which contains approximately 740 thousand Chinese news texts from 2005 to 2011 and has been marked for 14 classes. We further combine and filter the original classes in the dataset to meet our requirement for recognizing Weibo text. All codes and data for building bots are freely accessible in GitHub (anonymous for review).
@@ -19,7 +21,39 @@ We designed two experimental treatments and evaluated the difference in the abov
 
 ### Standard for text classification
 
-| A | 技能 | 排行 |
-| 刘备 | 哭 | 大哥 |
-| 关羽 | 打 | 二哥 |
-| 张飞 | 骂 | 三弟 |
+1. Acceptable entertainment content
+
+   + celebrity gossip, fashion, movies, TV shows, and pop music;
+   + Explicitly containing the name, account or abbreviation of entertainers.
+
+2. Acceptable sci-tech content
+
+   + nature, science, engineering, technological advances, digital products, and Internet;
+   + technical company and university.
+
+3. Common rejected content
+
+   + commercial advertisement;
+   + less than 5 Chinese characters.
+
+4. Rejected entertainment content
+
+   + ACG content (i.e., animation, comic, and digital game);
+   + art, literature, and personal feeling;
+   + simple lyrics and lines;
+   + personal leisure activities.
+
+5. Rejected sci-tech content
+
+   + financial or business report of technical or Internet company;
+   + price of digital products;
+   + military equipment;
+   + daily skills;
+   + constellations and divination;
+   + weather forecast;
+   + environmental conservation;
+   + documentary with irrelevant content.
+
+## Data description
+
+
