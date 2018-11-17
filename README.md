@@ -12,8 +12,17 @@ The public data for our experiment about user preference and information polariz
    6. Classified by FastText algorithm;
    7. Verification (0 for rejected; 1 for approved)
 - Exposed weibos (classified by volunteers)
-   1. 
-- Personal social networks
+   1. BotId : weibo id;
+   2. id : combined weibo id;
+   3. groupName : bot index;
+   4. time
+   5. isE : 1 for entertainment content
+   6. isT : 1 for sci-tech content
+   7. bzz : volunteer name
+   8. userId : poster id
+   9. content : text content
+- Personal social networks (in Pajek format)
+
 
 ## Experiment
 
