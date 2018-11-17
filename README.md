@@ -1,5 +1,7 @@
 # WeiboData
-The public data for our experiment about user preference and information polarization. We first describe our experiment, and you can directly go to [Data](#Data description)
+The public data for our experiment about user preference and information polarization. We first describe our experiment, and you can directly go to 
+
+[Data](#Data description)
 
 ## Experiment
 
