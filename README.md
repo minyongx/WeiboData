@@ -19,7 +19,7 @@ We designed two experimental treatments and evaluated the difference in the abov
 
 ### Standard for text classification
 
-A | 技能 | 排行
-刘备 | 哭 | 大哥
-关羽 | 打 | 二哥
-张飞 | 骂 | 三弟
+| A | 技能 | 排行 |
+| 刘备 | 哭 | 大哥 |
+| 关羽 | 打 | 二哥 |
+| 张飞 | 骂 | 三弟 |
