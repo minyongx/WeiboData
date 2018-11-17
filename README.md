@@ -1,4 +1,5 @@
 # WeiboData
+
 The public data for our experiment about user preference and information polarization.
 
 ## Data description
@@ -22,6 +23,7 @@ The public data for our experiment about user preference and information polariz
    8. userId : poster id
    9. content : text content
 - Personal social networks (in Pajek format)
+- Bot source code & profiles
 
 
 ## Experiment
