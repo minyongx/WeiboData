@@ -1,0 +1,303 @@
+<!--
+基于bootstrap的监控网页前端，基本功能（除了动态信息展示，这个可以和你想用的logger结合起来，直接再网页上展示日志结果）
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style type="text/css">
+        body {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        table {
+            font-size: x-small;
+        }
+        p {
+            font-size: x-small;
+        }
+        h6 {
+            color: chocolate;
+        }
+        span {
+            font-size: x-small;
+        }
+    </style>
+
+    <title>Weibo Social Bot</title>
+</head>
+<body>
+<div class="container">
+    <h3>WeiboBot</h3>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <h6>组信息</h6>
+            <div class="table-responsive" style="min-height: 300px; max-height: 300px">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>兴趣</th>
+                        <th>人数</th>
+                        <th>最新</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr id="grp1">
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp2">
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp3">
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp4">
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp5">
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp6">
+                        <td>6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp7">
+                        <td>7</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp8">
+                        <td>8</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp9">
+                        <td>9</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp10">
+                        <td>10</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp11">
+                        <td>11</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp12">
+                        <td>12</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp13">
+                        <td>13</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp14">
+                        <td>14</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp15">
+                        <td>15</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp16">
+                        <td>16</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp17">
+                        <td>17</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp18">
+                        <td>18</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp19">
+                        <td>19</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="grp20">
+                        <td>20</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <button id="btnGrpRefresh" type="button" class="btn btn-sm btn-primary" onclick="refreshGrpList(); return false;"><span>刷新</span></button>
+            <br>
+            <hr>
+            <h6>运行</h6>
+            <div class="card mb-4 box-shadow" style="background-color: lightgrey; min-height: 200px; max-height: 200px; overflow:auto">
+                <div class="card-body">
+                    <p class="card-text">
+                        System information ...
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <h6>关注验证</h6>
+            <div class="table-responsive" style="max-height: 600px">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>组</th>
+                        <th>兴趣</th>
+                        <th>来源</th>
+                        <th>内容</th>
+                        <th>目标</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="uncheck">
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="d-flex justify-content-between align-items-center">
+                <button id="btnRefresh" type="button" class="btn btn-sm btn-primary" onclick="refreshUncheckedList(); return false;"><span>刷新</span></button>
+                <div class="btn-group-sm">
+                    <button id="btnOK" type="button" class="btn btn-sm btn-success" onclick="check(true); return false;"><span>验证</span></button>
+                    <button id="btnCancel" type="button" class="btn btn-sm btn-danger" onclick="check(false); return false;"><span>取消</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    var groups;
+
+    $(document).ready(function() {
+        // 获得group基本信息
+        $.getJSON("/group.ser", {}, function(json, state) {
+            groups = json;
+            refreshGrpList();
+        });
+
+        refreshUncheckedList();
+    });
+
+    function refreshGrpList() {
+        $.getJSON("/group.ser", {}, function(json, state) {
+            for (var i = 0; i < 20; i++) {
+                if (i >= json.length) {
+                    // 无该组信息
+                    $("#grp"+(i+1)+" > td:nth-child(2)").empty();
+                    $("#grp"+(i+1)+" > td:nth-child(3)").empty();
+                    $("#grp"+(i+1)+" > td:nth-child(4)").empty();
+                } else {
+                    // 信息更新
+                    // console.log(JSON.stringify(json));
+                    $("#grp"+(i+1)+" > td:nth-child(2)").text(json[i].hobby);
+                    $("#grp"+(i+1)+" > td:nth-child(3)").text(json[i].number);
+                    var d = new Date();
+                    d.setTime(json[i].lastUpdate);
+                    $("#grp"+(i+1)+" > td:nth-child(4)").text(d.toLocaleString());
+                }
+            }
+        });
+    }
+
+    function refreshUncheckedList() {
+        $("#btnOK").attr("disabled", "disabled");
+        $("#btnCancel").attr("disabled", "disabled");
+        $.getJSON("/list.ser", {}, function(json, state) {
+            $("#uncheck").empty();
+            // console.log(JSON.stringify(json));
+            for (var i = 0; i < json.length; i++) {
+                for (var j = 0; j < json[i].length; j++) {
+                    var d = new Date();
+                    d.setTime(json[i][j].updateTime);
+                    var line = "<tr>"
+                        + "<td>" + (i+1) + "</td>"
+                        + "<td>" + groups[i].hobby + "</td>"
+                        + "<td>" + json[i][j].parent.user.id + "</td>"
+                        + "<td><a href=\"" + json[i][j].weibo.url + "\">" + json[i][j].weibo.content + "</a></td>"
+                        + "<td>" + json[i][j].user.id + "</td>"
+                        + "<td>" + d.toLocaleString() + "</td>"
+                        + "<td><input type=\"checkbox\" name=\"userCheckBox\" value=\"checkbox\" class=\"form-control\"></td>"
+                        + "</tr>";
+                    $(line).appendTo("#uncheck");
+                }
+            }
+            $("#btnOK").removeAttr("disabled");
+            $("#btnCancel").removeAttr("disabled");
+        });
+    }
+
+    function check(passed) {
+        var bnr = $("#btnRefresh");
+        var tbc = $("#uncheck");
+        bnr.attr("disabled", "disabled");
+        var m = tbc.find("tr").length;
+        for (var i = 0; i < m; i++) {
+            // console.log(tbc.find("tr:nth-child(" + (i+1) + ") > td:nth-child(7) > input").is(":checked"));
+            if (!tbc.find("tr:nth-child(" + (i+1) + ") > td:nth-child(7) > input").is(":checked"))
+                continue;
+            var groupIndex = tbc.find("tr:nth-child(" + (i+1) + ") > td:nth-child(1)").text();
+            var userId = tbc.find("tr:nth-child(" + (i+1) + ") > td:nth-child(5)").text();
+            $.getJSON("/check.ser", {group : groupIndex, user : userId, passed : passed}, function(json, state) {});
+        }
+        refreshUncheckedList();
+        bnr.removeAttr("disabled");
+    }
+</script>
+</body>
+</html>

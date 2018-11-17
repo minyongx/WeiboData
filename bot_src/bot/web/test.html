@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+</head>
+<body>
+
+<div class="WB_text" node-type="feed_list_reason">
+    深夜福利
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/74/lxhainio_org.gif" title="[好愛哦]" alt="[好愛哦]"
+         type="face" style="visibility: visible;">
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/74/lxhainio_org.gif"
+         title="[好愛哦]" alt="[好愛哦]" type="face"
+         style="visibility: visible;">
+    <img class="W_img_face"
+         render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/74/lxhainio_org.gif"
+         title="[好愛哦]" alt="[好愛哦]"
+         type="face"
+         style="visibility: visible;">
+    我们鹿BOSS
+    <a target="_blank" render="ext" extra-data="type=atname" href="//weibo.com/n/M%E9%B9%BFM?from=feed&amp;loc=at"
+       usercard="name=M鹿M">@M鹿M</a>
+    睡前跟谁在斗智斗勇呢
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/71/2018new_touxiao_org.png"
+         title="[偷笑]" alt="[偷笑]" type="face" style="visibility: visible;">
+    其实小佳每天深夜跟大家一样，和馋猫斗争～现在有了
+    <a target="_blank" render="ext" suda-uatrack="key=topic_click&amp;value=click_topic"
+       class="a_topic" extra-data="type=topic"
+       href="http://s.weibo.com/weibo/%23%E9%B9%BF%E6%99%97%E5%B0%81%E5%8D%B0%E7%A5%9E%E5%99%A8%23">#鹿晗封印神器#</a>
+    每天睡前贴一贴，美白牙齿妥妥的
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/33/2018new_xixi_org.png" title="[嘻嘻]"
+         alt="[嘻嘻]" type="face" style="visibility: visible;">
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/33/2018new_xixi_org.png"
+         title="[嘻嘻]" alt="[嘻嘻]" type="face"
+         style="visibility: visible;">
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/33/2018new_xixi_org.png" title="[嘻嘻]" alt="[嘻嘻]"
+         type="face" style="visibility: visible;">
+    快上天猫pick神器
+    <a title="佳洁士鹿晗理想有养牙贴洁白牙齿美白去黄牙炫..." href="http://t.cn/Rg9lKBV" alt="http://t.cn/Rg9lKBV"
+       action-type="feed_list_url" target="_blank">
+        <i class="W_ficon ficon_cd_link">O</i>
+        佳洁士鹿晗理想有养牙贴洁白牙齿美白去黄牙炫...</a>
+    <a target="_blank" render="ext"
+       suda-uatrack="key=topic_click&amp;value=click_topic"
+       class="a_topic" extra-data="type=topic"
+       href="http://s.weibo.com/weibo/%23%E9%B9%BF%E6%99%97%E7%90%86%E6%83%B3%E7%9A%84%E6%9C%89%E5%85%BB%E7%94%9F%E6%B4%BB%23">#鹿晗理想的有养生活#</a>
+    想你们跟我过得一样好
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8a/2018new_xin_org.png" title="[心]"
+         alt="[心]" type="face" style="visibility: visible;">
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8a/2018new_xin_org.png"
+         title="[心]" alt="[心]" type="face"
+         style="visibility: visible;">
+    <img class="W_img_face" render="ext"
+         src="//img.t.sinajs.cn/t4/appstyle/expression/ext/normal/8a/2018new_xin_org.png"
+         title="[心]" alt="[心]" type="face" style="visibility: visible;"> ​​​​
+</div>
+
+<script>
+    var nodes = document.querySelector(".WB_text").childNodes;
+    var R = new Array();
+    for (var i = 0, j = 0; i < nodes.length; i++) {
+        if (nodes[i].nodeType == 1) {
+            R[j++] = nodes[i];
+            console.log(nodes[i].tagName);
+        } else if (nodes[i].nodeType == 3) {
+            R[j++] = nodes[i].textContent;
+            console.log(nodes[i].textContent);
+        }
+    }
+</script>
+
+</body>
+</html>
