@@ -12,7 +12,7 @@ The public data for our experiment about user preference and information polariz
    6. Classified by FastText algorithm;
    7. Verification (0 for rejected; 1 for approved)
 - Exposed weibos (classified by volunteers)
-
+   1. 
 - Personal social networks
 
 ## Experiment
