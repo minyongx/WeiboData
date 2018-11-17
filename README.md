@@ -1,7 +1,19 @@
 # WeiboData
-The public data for our experiment about user preference and information polarization. We first describe our experiment, and you can directly go to 
+The public data for our experiment about user preference and information polarization.
 
-[Data](#Data description)
+## Data description
+
+- Verification data (7 features)
+   1. Bot index in the group;
+   2. Poster id;
+   3. Source id;
+   4. Time;
+   5. Content;
+   6. Classified by FastText algorithm;
+   7. Verification (0 for rejected; 1 for approved)
+- Exposed weibos (classified by volunteers)
+
+- Personal social networks
 
 ## Experiment
 
@@ -24,29 +36,20 @@ We designed two experimental treatments and evaluated the difference in the abov
 ### Standard for text classification
 
 1. Acceptable entertainment content
-
    + celebrity gossip, fashion, movies, TV shows, and pop music;
    + Explicitly containing the name, account or abbreviation of entertainers.
-
 2. Acceptable sci-tech content
-
    + nature, science, engineering, technological advances, digital products, and Internet;
    + technical company and university.
-
 3. Common rejected content
-
    + commercial advertisement;
    + less than 5 Chinese characters.
-
 4. Rejected entertainment content
-
    + ACG content (i.e., animation, comic, and digital game);
    + art, literature, and personal feeling;
    + simple lyrics and lines;
    + personal leisure activities.
-
 5. Rejected sci-tech content
-
    + financial or business report of technical or Internet company;
    + price of digital products;
    + military equipment;
@@ -55,7 +58,3 @@ We designed two experimental treatments and evaluated the difference in the abov
    + weather forecast;
    + environmental conservation;
    + documentary with irrelevant content.
-
-## Data description
-
-
